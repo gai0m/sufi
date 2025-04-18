@@ -1,0 +1,82 @@
+body {
+    margin: 0;
+    padding: 0; /* Remove padding to allow canvas to fill edge-to-edge */
+    background-color: #050505; /* Very dark background */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden; /* Crucial to hide canvas overflow */
+    font-family: 'Courier New', Courier, monospace;
+    color: #CCCCCC; /* Default light gray text */
+    position: relative; /* Needed for absolute positioning of children */
+}
+
+#matrix-canvas {
+    position: fixed; /* Cover the entire viewport */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block; /* Initially visible */
+    z-index: 1; /* Behind main content but above background */
+}
+
+#name {
+    font-family: 'Orbitron', sans-serif; /* Fancy/Tech font */
+    font-size: 2.2em; /* Larger size */
+    font-weight: 700; /* Bolder Orbitron */
+    color: #E0E0E0; /* Bright Gray */
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.6); /* More visible white glow */
+    margin: 20px 0;
+    z-index: 10; /* Above canvas and main square */
+    text-align: center;
+    letter-spacing: 2px;
+    position: relative; /* Ensure it's in the normal flow layer */
+}
+
+#telegram {
+    font-family: 'Audiowide', cursive; /* Different fancy/tech font */
+    font-size: 1.5em;           /* Slightly larger */
+    color: #20C2AA;             /* Cyber Teal/Cyan color */
+    text-shadow: 0 0 8px rgba(32, 194, 170, 0.7); /* Matching teal glow */
+    letter-spacing: 1px;        /* Add spacing */
+    text-transform: uppercase;  /* Make it uppercase */
+    margin: 15px 0;
+    z-index: 10; /* Above canvas and main square */
+    text-align: center;
+    position: relative; /* Ensure it's in the normal flow layer */
+}
+
+#hacker-square {
+    width: 300px; /* Slightly wider square for text */
+    height: 200px; /* Rectangular looks more terminal-like */
+    background-color: #1a1a2e; /* Initial color (will be updated quickly) */
+    transition: background-color 0.05s linear; /* Even faster transition */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    box-sizing: border-box;
+    text-align: center;
+    border: 1px solid #333; /* Subtle border */
+    z-index: 5; /* Above canvas */
+    position: relative; /* Ensure it's in the normal flow layer */
+    margin: 10px 0; /* Add some margin */
+}
+
+#quote-text {
+    margin: 0;
+    font-size: 1em; /* Adjust as needed */
+    font-family: 'Courier New', Courier, monospace; /* Keep quote text monospace */
+    font-weight: bold; /* Make quotes bolder */
+    color: #A0A0A0; /* Default quote color (will be overridden by JS) */
+    word-wrap: break-word;
+    max-height: 100%;
+    overflow: hidden;
+    line-height: 1.4; /* Improve readability */
+    transition: color 0.08s ease-in-out; /* Faster color transition */
+}
+
+/* --- Pop-up Square Styles Removed --- */
